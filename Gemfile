@@ -29,7 +29,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
+gem "foreman"
 group :development, :test do
   gem "pry-rails"
   gem "rspec-rails", "~> 2.0"
@@ -39,6 +39,9 @@ group :development, :test do
   gem "selenium-webdriver"
 end
 
-group :development do
+group :production, :staging do
+  gem "rails_12factor"
+  gem "rails_stdout_logging"
+  gem "rails_serve_static_assets"
 end
 
